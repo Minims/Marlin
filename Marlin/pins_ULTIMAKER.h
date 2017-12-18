@@ -43,7 +43,7 @@
 //
 // Servos
 //
-#define SERVO0_PIN         13 // untested
+#define SERVO0_PIN         11 // untested
 
 //
 // Limit Switches
@@ -53,7 +53,7 @@
 #define Y_MIN_PIN          26
 #define Y_MAX_PIN          28
 #define Z_MIN_PIN          30
-#define Z_MAX_PIN          32
+#define Z_MAX_PIN          -1 // 32
 
 //
 // Z Probe (when not Z_MIN_PIN)
