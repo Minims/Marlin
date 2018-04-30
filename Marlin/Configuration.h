@@ -512,7 +512,10 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 100 }
+//y and x = (200pasMoteur x 32microstepDrv)/(20dentsPoulie  x 2pasCourroie ) = 160
+//z = (pas_moteur_par_tour * nb_de_micropas_driver) / pas_du_filetage = 800
+//e = (pas_moteur_par_tour * nb_de_micropas_driver) / (diamètre_effectif_galet * pi) = ?
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 100 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -762,9 +765,9 @@
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 200
-#define Y_MAX_POS 200
-#define Z_MAX_POS 155
+#define X_MAX_POS 300
+#define Y_MAX_POS 300
+#define Z_MAX_POS 280
 
 // If enabled, axes won't move below MIN_POS in response to movement commands.
 //#define MIN_SOFTWARE_ENDSTOPS
