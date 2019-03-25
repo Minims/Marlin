@@ -42,9 +42,9 @@
 #define X_MIN_PIN          22
 #define X_MAX_PIN          24
 #define Y_MIN_PIN          26
-#define Y_MAX_PIN          28
+#define Y_MAX_PIN          -1   // 28
 #define Z_MIN_PIN          30
-#define Z_MAX_PIN          32
+#define Z_MAX_PIN          -1   // 32
 
 //
 // Steppers
@@ -97,7 +97,7 @@
 
 #if HAS_SPI_LCD
 
-  #define BEEPER_PIN       18
+  #define BEEPER_PIN       28   // 18
 
   #if ENABLED(NEWPANEL)
 
@@ -117,7 +117,7 @@
       #define BTN_EN2      40
     #endif
 
-    #define BTN_ENC        19
+    #define BTN_ENC        32   // 19
     #define SD_DETECT_PIN  38
 
   #else // !NEWPANEL
@@ -132,7 +132,7 @@
     #define LCD_PINS_D4     6
     #define LCD_PINS_D5    21
     #define LCD_PINS_D6    20
-    #define LCD_PINS_D7    19
+    #define LCD_PINS_D7    32   // 19
 
     #define SD_DETECT_PIN  -1
 
