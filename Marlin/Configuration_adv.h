@@ -601,7 +601,7 @@
 #define Z_STEPPER_AUTO_ALIGN
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
   // Define probe X and Y positions for Z1, Z2 [, Z3]
-  #define Z_STEPPER_ALIGN_X { 10, 175 }
+  #define Z_STEPPER_ALIGN_X { 27, 190 }
   #define Z_STEPPER_ALIGN_Y { 100, 100 }
   // Set number of iterations to align
   #define Z_STEPPER_ALIGN_ITERATIONS 3
