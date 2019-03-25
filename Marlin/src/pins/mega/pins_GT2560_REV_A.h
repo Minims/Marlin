@@ -41,7 +41,7 @@
 #define X_MIN_PIN                             22
 #define X_MAX_PIN                             24
 #define Y_MIN_PIN                             26
-#define Y_MAX_PIN                             28
+#define Y_MAX_PIN                             -1   // 28
 #define Z_MIN_PIN                             30
 
 #if ENABLED(BLTOUCH)
@@ -53,7 +53,7 @@
     #define Z_MAX_PIN                         -1
   #endif
 #else
-  #define Z_MAX_PIN                           32
+  #define Z_MAX_PIN                           -1   // 32
 #endif
 
 //
@@ -107,7 +107,7 @@
 
 #if HAS_WIRED_LCD
 
-  #define BEEPER_PIN                          18
+  #define BEEPER_PIN                        28   // 18
 
   #if IS_NEWPANEL
 
@@ -141,7 +141,7 @@
       #define BTN_EN2                         40
     #endif
 
-    #define BTN_ENC                           19
+    #define BTN_ENC                           32   // 19
     #define SD_DETECT_PIN                     38
 
   #else                                           // !IS_NEWPANEL
@@ -156,7 +156,7 @@
     #define LCD_PINS_D4                        6
     #define LCD_PINS_D5                       21
     #define LCD_PINS_D6                       20
-    #define LCD_PINS_D7                       19
+    #define LCD_PINS_D7                       32   // 19
 
     #if ENABLED(REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER)
       #define BTN_ENC_EN             LCD_PINS_D7  // Detect the presence of the encoder
