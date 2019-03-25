@@ -39,7 +39,7 @@
 // Limit Switches
 //
 #define X_MIN_PIN                             22
-#define X_MAX_PIN                             24
+#define X_MAX_PIN                             -1   // 24
 #define Y_MIN_PIN                             26
 #define Y_MAX_PIN                             -1   // 28
 #define Z_MIN_PIN                             30
@@ -54,6 +54,10 @@
   #endif
 #else
   #define Z_MAX_PIN                           -1   // 32
+#endif
+
+#ifndef FIL_RUNOUT_PIN
+  #define FIL_RUNOUT_PIN   24
 #endif
 
 //
@@ -107,7 +111,7 @@
 
 #if HAS_WIRED_LCD
 
-  #define BEEPER_PIN                        28   // 18
+  #define BEEPER_PIN                          28    // 18
 
   #if IS_NEWPANEL
 
