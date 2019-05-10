@@ -599,9 +599,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 18.42
-    #define DEFAULT_Ki 0.80
-    #define DEFAULT_Kd 105.63
+    #define DEFAULT_Kp 14.49
+    #define DEFAULT_Ki 0.82
+    #define DEFAULT_Kd 64.39
   #endif
 #endif // PIDTEMP
 
@@ -638,10 +638,10 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  //12v MK3 Aluminium Heatbed 3mm (Insulated) @80°C
-  #define DEFAULT_bedKp 763.94
-  #define DEFAULT_bedKi 141.30
-  #define DEFAULT_bedKd 1032.56
+  //12v MK3 Aluminium Heatbed 3mm (Insulated) @85°C
+  #define DEFAULT_bedKp 154.93
+  #define DEFAULT_bedKi 18.19
+  #define DEFAULT_bedKd 879.94
 
 #endif // PIDTEMPBED
 
