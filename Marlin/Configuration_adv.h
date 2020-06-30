@@ -626,12 +626,12 @@
  * the position of the toolhead relative to the workspace.
  */
 
-//#define SENSORLESS_BACKOFF_MM  { 2, 2 }     // (mm) Backoff from endstops before sensorless homing
+#define SENSORLESS_BACKOFF_MM  { 2, 2 }     // (mm) Backoff from endstops before sensorless homing
 
-#define HOMING_BUMP_MM      { 5, 5, 2 }       // (mm) Backoff from endstops after first bump
+#define HOMING_BUMP_MM      { 0, 0, 0 }       // (mm) Backoff from endstops after first bump
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 
-//#define HOMING_BACKOFF_POST_MM { 2, 2, 2 }  // (mm) Backoff from endstops after homing
+#define HOMING_BACKOFF_POST_MM { 2, 2, 2 }  // (mm) Backoff from endstops after homing
 
 //#define QUICK_HOME                          // If G28 contains XY do a diagonal move first
 //#define HOME_Y_BEFORE_X                     // If G28 contains XY home Y before X
@@ -2210,7 +2210,7 @@
 
   #if AXIS_IS_TMC(X)
     #define X_CURRENT      1000        // (mA) RMS current. Multiply by 1.414 for peak current.
-    #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
+    #define X_CURRENT_HOME  400  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     16    // 0..256
     #define X_RSENSE          0.11
     #define X_CHAIN_POS      -1    // <=0 : Not chained. 1 : MCU MOSI connected. 2 : Next in chain, ...
@@ -2226,7 +2226,7 @@
 
   #if AXIS_IS_TMC(Y)
     #define Y_CURRENT      1000
-    #define Y_CURRENT_HOME  Y_CURRENT
+    #define Y_CURRENT_HOME  400
     #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.11
     #define Y_CHAIN_POS      -1
@@ -2489,20 +2489,20 @@
    * IMPROVE_HOMING_RELIABILITY tunes acceleration and jerk when
    * homing and adds a guard period for endstop triggering.
    */
-  //#define SENSORLESS_HOMING // StallGuard capable drivers only
+  #define SENSORLESS_HOMING // StallGuard capable drivers only
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
-    #define X_STALL_SENSITIVITY  8
-    #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-    #define Y_STALL_SENSITIVITY  8
-    #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
+    #define X_STALL_SENSITIVITY  50
+    //#define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
+    #define Y_STALL_SENSITIVITY  50
+    //#define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  8
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define Z3_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define Z4_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define SPI_ENDSTOPS              // TMC2130 only
-    //#define IMPROVE_HOMING_RELIABILITY
+    #define IMPROVE_HOMING_RELIABILITY
   #endif
 
   /**
@@ -2521,7 +2521,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  //#define SQUARE_WAVE_STEPPING
+  #define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
