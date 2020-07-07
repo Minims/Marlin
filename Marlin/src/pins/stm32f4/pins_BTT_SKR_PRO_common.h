@@ -102,7 +102,7 @@
 // Filament Runout Sensor
 //
 #ifndef FIL_RUNOUT_PIN
-  #define FIL_RUNOUT_PIN                    PE15
+  #define FIL_RUNOUT_PIN                    PE4 // PE15
 #endif
 #ifndef FIL_RUNOUT2_PIN
   #define FIL_RUNOUT2_PIN                   PE10
