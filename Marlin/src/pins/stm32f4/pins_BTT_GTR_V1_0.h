@@ -119,6 +119,13 @@
 #endif
 
 //
+// Filament Runout Sensor
+//
+#ifndef FIL_RUNOUT_PIN
+  #define FIL_RUNOUT_PIN                    PI8
+#endif
+
+//
 // Steppers
 //
 #define X_STEP_PIN                          PC15
