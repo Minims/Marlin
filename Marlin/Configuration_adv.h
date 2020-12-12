@@ -853,7 +853,7 @@
 
   // Provide Z stepper positions for more rapid convergence in bed alignment.
   // Requires triple stepper drivers (i.e., set NUM_Z_STEPPER_DRIVERS to 3)
-  #define Z_STEPPER_ALIGN_KNOWN_STEPPER_POSITIONS
+  //#define Z_STEPPER_ALIGN_KNOWN_STEPPER_POSITIONS
   #if ENABLED(Z_STEPPER_ALIGN_KNOWN_STEPPER_POSITIONS)
     // Define Stepper XY positions for Z1, Z2, Z3 corresponding to
     // the Z screw positions in the bed carriage.
@@ -1219,7 +1219,7 @@
 
 #if HAS_DISPLAY
   // The timeout (in ms) to return to the status screen from sub-menus
-  //#define LCD_TIMEOUT_TO_STATUS 15000
+  #define LCD_TIMEOUT_TO_STATUS 15000
 
   #if ENABLED(SHOW_BOOTSCREEN)
     #define BOOTSCREEN_TIMEOUT 4000      // (ms) Total Duration to display the boot screen(s)
@@ -1229,13 +1229,13 @@
   #endif
 
   // Scroll a longer status message into view
-  //#define STATUS_MESSAGE_SCROLLING
+  #define STATUS_MESSAGE_SCROLLING
 
   // On the Info Screen, display XY with one decimal place when possible
-  //#define LCD_DECIMAL_SMALL_XY
+  #define LCD_DECIMAL_SMALL_XY
 
   // Add an 'M73' G-code to set the current percentage
-  //#define LCD_SET_PROGRESS_MANUALLY
+  #define LCD_SET_PROGRESS_MANUALLY
 
   // Show the E position (filament used) during printing
   //#define LCD_SHOW_E_TOTAL
@@ -2700,8 +2700,8 @@
    * When disabled, Marlin will use spreadCycle stepping mode.
    */
   //#define STEALTHCHOP_XY
-  #define STEALTHCHOP_Z
-  #define STEALTHCHOP_E
+  //#define STEALTHCHOP_Z
+  //#define STEALTHCHOP_E
 
   /**
    * Optimize spreadCycle chopper parameters by using predefined parameter sets
@@ -2718,16 +2718,16 @@
    * Define your own with:
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
-  #define CHOPPER_TIMING CHOPPER_DEFAULT_12V        // All axes (override below)
-  //#define CHOPPER_TIMING_X  CHOPPER_TIMING        // For X Axes (override below)
+  #define CHOPPER_TIMING CHOPPER_DEFAULT_24V        // All axes (override below)
+  #define CHOPPER_TIMING_X  CHOPPER_09STEP_24V        // For X Axes (override below)
   //#define CHOPPER_TIMING_X2 CHOPPER_TIMING_X
-  //#define CHOPPER_TIMING_Y  CHOPPER_TIMING        // For Y Axes (override below)
+  #define CHOPPER_TIMING_Y  CHOPPER_09STEP_24V        // For Y Axes (override below)
   //#define CHOPPER_TIMING_Y2 CHOPPER_TIMING_Y
-  //#define CHOPPER_TIMING_Z  CHOPPER_TIMING        // For Z Axes (override below)
-  //#define CHOPPER_TIMING_Z2 CHOPPER_TIMING_Z
-  //#define CHOPPER_TIMING_Z3 CHOPPER_TIMING_Z
-  //#define CHOPPER_TIMING_Z4 CHOPPER_TIMING_Z
-  //#define CHOPPER_TIMING_E  CHOPPER_TIMING        // For Extruders (override below)
+  #define CHOPPER_TIMING_Z  CHOPPER_TIMING        // For Z Axes (override below)
+  #define CHOPPER_TIMING_Z2 CHOPPER_TIMING_Z
+  #define CHOPPER_TIMING_Z3 CHOPPER_TIMING_Z
+  #define CHOPPER_TIMING_Z4 CHOPPER_TIMING_Z
+  #define CHOPPER_TIMING_E  CHOPPER_TIMING        // For Extruders (override below)
   //#define CHOPPER_TIMING_E1 CHOPPER_TIMING_E
   //#define CHOPPER_TIMING_E2 CHOPPER_TIMING_E
   //#define CHOPPER_TIMING_E3 CHOPPER_TIMING_E
@@ -2762,16 +2762,16 @@
    * STEALTHCHOP_(XY|Z|E) must be enabled to use HYBRID_THRESHOLD.
    * M913 X/Y/Z/E to live tune the setting
    */
-  #define HYBRID_THRESHOLD
+  //#define HYBRID_THRESHOLD
 
   #define X_HYBRID_THRESHOLD     100  // [mm/s]
   #define X2_HYBRID_THRESHOLD    100
   #define Y_HYBRID_THRESHOLD     100
   #define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD       3
-  #define Z2_HYBRID_THRESHOLD      3
-  #define Z3_HYBRID_THRESHOLD      3
-  #define Z4_HYBRID_THRESHOLD      3
+  #define Z_HYBRID_THRESHOLD       6
+  #define Z2_HYBRID_THRESHOLD      6
+  #define Z3_HYBRID_THRESHOLD      6
+  #define Z4_HYBRID_THRESHOLD      6
   #define E0_HYBRID_THRESHOLD     30
   #define E1_HYBRID_THRESHOLD     30
   #define E2_HYBRID_THRESHOLD     30
